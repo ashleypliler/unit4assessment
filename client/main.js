@@ -38,3 +38,37 @@ const getGoal = () => {
 goalBtn.addEventListener('click', getGoal);
 
 
+const goalType = document.querySelector('#goal');
+const goalOutput = document.querySelector('#goalOutput');
+
+const getGoalType = () => {
+    
+    const goalValue = goalType.options[goalType.selectedIndex].value;
+    const postObject = {
+        selectedValue: goalValue
+    }
+    axios.post("http://localhost:4000/api/goal-type/", postObject).then((res) => {
+        console.log(res.data);
+        goalOutput.innerHTML = res.data;
+    }).catch((error) => {
+        console.log(error);
+    })
+}
+
+goalType.addEventListener('change', getGoalType);
+
+const submitButton = document.querySelector('#submitButton')
+
+const goalInput = () => {
+    const textBox = document.querySelector('#goalsInput').value
+    const postObject = {
+        value: textBox
+    }
+    axios.post("http://localhost:4000/api/goalText/", postObject).then((res) => {
+        console.log(res.data);
+        goalText.innerHTML = res.data;
+    }).catch((error) => {
+        console.log(error);
+    })
+}
+submitButton.addEventListener('click', goalInput);

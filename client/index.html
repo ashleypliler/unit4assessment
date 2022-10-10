@@ -10,7 +10,7 @@
 
     
     <select id="goal">
-      <option value="none" selected disabled hidden>Choose your type of Goal</option>
+      <option value="none" selected disabled hidden>Choose your type of Goal:</option>
       <option id="Long-term" value="Long-term">Long-term</option>
       <option id="Short-term" value="Short-term">Short-term</option>
       <option id="Career goal" value="Career goal">Career goal</option>
@@ -20,12 +20,14 @@
     </select>
 
 
-    <input id="goals" type="text" placeholder="Type in your goals!">
+    <input id="goalsInput" type="text" placeholder="Type in your goals!">
 
-    
     <input id="submitButton" type="submit" value="Submit goals">
+    
 
+    <div >Your goal type: <span id="goalOutput"></span></div>
 
+    <div>goals: <span id="goalText"></span></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0/axios.min.js" integrity="sha512-26uCxGyoPL1nESYXHQ+KUmm3Maml7MEQNWU8hIt1hJaZa5KQAQ5ehBqK6eydcCOh6YAuZjV3augxu/5tY4fsgQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="main.js"></script>

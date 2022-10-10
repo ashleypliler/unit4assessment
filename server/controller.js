@@ -1,3 +1,6 @@
+
+
+
 module.exports = {
 
     getCompliment: (req, res) => {
@@ -15,7 +18,6 @@ module.exports = {
            let randomIndex = Math.floor(Math.random() * fortunes.length);
            let randomFortune = fortunes[randomIndex];
            res.status(200).send(randomFortune);
-           console.log(randomFortune)
         },
     getGoal: (req, res) => {
         const goals = ['Short-term goal','Long-term goal','Interpersonal goal','Career goal','Academic goal','Stretch goal','Financial goal']
@@ -23,7 +25,15 @@ module.exports = {
         let randomIndex = Math.floor(Math.random() * goals.length);
         let randomGoal = goals[randomIndex];
         res.status(200).send(randomGoal);
-    }
-        
+    },
+    getGoalType: (req, res) => {
+        res.status(200).send(req.body.selectedValue)
+
+    },
+    goalInput: (req, res) => {
+        res.status(200).send(req.body.value)
+    },
+
+     
 }
 
